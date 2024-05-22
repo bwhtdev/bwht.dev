@@ -1,0 +1,31 @@
+---
+import FormattedDate from './FormattedDate.astro';
+
+interface Props {
+  data: {
+    slug: string;
+    data: {
+      heroImage: string;
+      title: string;
+      description: string;
+      pubDate: string;
+    }; 
+  };
+}
+const { data: {
+  slug, data: {
+    heroImage, title, description, pubDate
+  }
+}} = Astro.props as Props;
+---
+
+<div class='flex flex-col items-center justify-center space-y-2 font-semibold rounded-lg border-[1px] border-none bg-white/5 p-4 text-sm rounded-md shadow-md active:translate-y-[2px] transition-all duration-300 ease-out hover:shadow-[rgba(250,160,160,0.4)] text-gray-500 dark:text-gray-400'>
+  <img class='rounded-lg' src={heroImage} alt={title} />
+  <a href={`/blog/${slug}`} class='flex'>
+    <h2 class='text-xl font-baunk text-gray-800 dark:text-gray-200 pt-4 pb-2'>{title}</h2>
+    <svg class='fill-gray-800 dark:fill-[#D08A8A] mr-2 mt-2' width="2em" height="2em" viewBox="0 0 15 15">
+      <path fill-rule="evenodd" d="M3.646 11.354a.5.5 0 0 1 0-.707L10.293 4H6a.5.5 0 0 1 0-1h5.5a.5.5 0 0 1 .5.5V9a.5.5 0 0 1-1 0V4.707l-6.646 6.647a.5.5 0 0 1-.708 0" clip-rule="evenodd"/></svg>
+  </a>
+  <p>{description}</p>
+  <p><FormattedDate date={pubDate} /></p>
+</div>

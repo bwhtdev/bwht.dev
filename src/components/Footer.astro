@@ -1,3 +1,14 @@
-<section class='pt-4'>
-  Footer
+---
+import Links from './Links.astro';
+import BlogBtn from './BlogBtn.astro';
+---
+
+<section class='flex flex-wrap items-center justify-between pt-20'>
+  <a href='/' class='font-crenzo text-sm text-gray-900 dark:text-gray-100'>BSW - 2024</a>
+
+  <div class='flex gap-2 flex-wrap flex-row-reverse'>
+    <Links small={true} />
+
+    <BlogBtn small={true} />
+  </div>
 </section>

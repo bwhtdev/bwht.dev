@@ -1,6 +1,11 @@
 ---
 import Link from './Link.astro';
 
+interface Props {
+  small?: boolean;
+}
+const { small=false } = Astro.props as Props;
+
 const LINKS = [{
   url: 'https://www.github.com/bradswhite',
   name: 'GitHub',
@@ -19,9 +24,9 @@ const LINKS = [{
   icon: `<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>`
 }];
 ---
-<div class='flex gap-2 flex-row'>
+<div class='flex gap-2 flex-row flex-wrap'>
   {LINKS.map(({ url, name, icon }) => (
-    <Link url={url} name={name}>
+    <Link url={url} name={name} small={small}>
       <Fragment set:html={icon} />
     </Link>
   ))}

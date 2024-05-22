@@ -1,0 +1,65 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+  desc: string;
+}
+
+const { title, desc } = Astro.props;
+---
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>
+    <BaseHead title={title} desc={desc} />
+    <style is:global>
+      :root {
+        --pri-dark: 144, 60, 60;
+        --sec-dark: 163, 82, 82;
+
+        --pri: 250, 160, 160;
+        --sec: 208, 138, 138;
+      }
+
+      @font-face {
+        font-family: 'Crenzo';
+        src: url('/public/fonts/Crenzo.ttf');
+        font-weight: bold;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Triakis';
+        src: url('/public/fonts/TriakisReg.otf');
+        font-weight: bold;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Baunk';
+        src: url('/public/fonts/Baunk.ttf');
+        font-weight: bold;
+        font-style: normal;
+      }
+
+      * {
+        @apply selection:bg-sec dark:selection:bg-sec-dark;
+      }
+
+      body {
+        @apply bg-pri dark:bg-pri-dark;
+      }
+    </style>
+	</head>
+  <body
+    x-data="{darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system')}"
+    x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))"
+    x-bind:class="{'dark': darkMode === 'dark' || (darkMode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}">
+    <main class='mx-auto min-h-full max-w-4xl py-16'>
+      <slot />
+      <Footer />
+    </main>
+	</body>
+</html>

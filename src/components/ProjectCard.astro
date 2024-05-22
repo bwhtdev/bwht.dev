@@ -1,0 +1,24 @@
+---
+interface Props {
+  data: {
+    title: string;
+    github: string;
+    url: string;
+    desc: string;
+    tech: string[];
+  };
+}
+const { data: {
+  title, github, url, desc, tech
+}} = Astro.props as Props;
+---
+
+<div>
+  <h2>{title}</h2>
+  <a href={github}>GitHub</a>
+  <a href={url}>Live Site</a>
+  <p>{desc}</p>
+  <p>{tech.map(name => (
+    <bold>{name}</bold>
+  ))}</p>
+</div>

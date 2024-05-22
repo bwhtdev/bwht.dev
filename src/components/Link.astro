@@ -1,0 +1,15 @@
+---
+interface Props {
+  url: string;
+  name: string;
+}
+const { url, name } = Astro.props as Props;
+---
+
+<a href={url} target='_blank' class=' cursor-pointer font-baunk text-gray-800 dark:text-gray-200'>
+  <svg width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none" stroke="#D08A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <title>{name}</title>
+    <slot />
+  </svg>
+  <bold>{name}</bold>
+</a>

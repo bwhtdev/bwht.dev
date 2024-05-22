@@ -1,0 +1,28 @@
+---
+import ProjectCard from './ProjectCard.astro';
+
+interface project {
+  title: string;
+  github: string;
+  url: string;
+  desc: string;
+  tech: string[];
+}
+const PROJECTS: project[] = [{
+  title: 'Project 1',
+  github: 'github.com/bradswhite/project1',
+  url: 'vercel.com',
+  desc: 'Project details..',
+  tech: ['TypeScript', 'Astro', 'Tailwind', 'Golang']
+}, {
+  title: 'Project 2',
+  github: 'github.com/bradswhite/project2',
+  url: 'vercel.com',
+  desc: 'Project details..',
+  tech: ['TypeScript', 'Astro', 'Tailwind', 'Golang']
+}];
+---
+
+{PROJECTS.map(data => (
+  <ProjectCard data={data} />
+))}

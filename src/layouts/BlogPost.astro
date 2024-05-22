@@ -8,10 +8,10 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, desc, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
-<Layout title={`BSW // ${title}`} desc={desc}>
+<Layout title={`BSW // ${title}`} desc={description}>
   <Header />
   <article>
     <div class="hero-image">

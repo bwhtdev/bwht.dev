@@ -4,7 +4,6 @@ import Header from '../../components/Header.astro';
 import PostCard from '../../components/PostCard.astro';
 
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -23,24 +22,9 @@ const posts = (await getCollection('blog')).sort(
     </a>
 
     <div class='flex gap-4 grid grid-cols-1 md:grid-cols-2 flex-row flex-wrap'>
-      {posts.map((post) => (
-        <PostCard data={post} />
+      {posts.map(({ slug, data: { heroImage, title, description, pubDate }}) => (
+        <PostCard slug={slug} heroImage={heroImage} title={title} description={description} pubDate={pubDate} />
       ))}
     </div>
-  </section>
-    
-    <!--<ul>
-      {posts.map((post) => (
-        <li>
-          <a href={`/blog/${post.slug}/`}>
-            <img width={720} height={360} src={post.data.heroImage} alt="" />
-            <h4 class="title">{post.data.title}</h4>
-            <p class="date">
-              <FormattedDate date={post.data.pubDate} />
-            </p>
-          </a>
-        </li>
-      ))}
-    </ul>-->
   </section>
 </Layout>

@@ -2,21 +2,13 @@
 import FormattedDate from './FormattedDate.astro';
 
 interface Props {
-  data: {
-    slug: string;
-    data: {
-      heroImage: string;
-      title: string;
-      description: string;
-      pubDate: string;
-    }; 
-  };
+  slug: string;
+  heroImage?: string;
+  title: string;
+  description: string;
+  pubDate: Date;
 }
-const { data: {
-  slug, data: {
-    heroImage, title, description, pubDate
-  }
-}} = Astro.props as Props;
+const { slug, heroImage, title, description, pubDate } = Astro.props;
 ---
 
 <div class='flex flex-col items-center justify-center space-y-2 font-semibold rounded-lg border-[1px] border-none bg-[rgba(208,138,138,0.5)] dark:bg-[rgba(163,82,82,0.5)] p-4 text-sm rounded-md shadow-md active:translate-y-[2px] transition-all duration-300 ease-out hover:shadow-[rgba(163,82,82,0.4)] dark:hover:shadow-[rgba(250,160,160,0.4)] text-gray-500 dark:text-gray-400'>

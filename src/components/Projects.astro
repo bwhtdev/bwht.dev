@@ -1,6 +1,17 @@
 ---
 import ProjectCard from './ProjectCard.astro';
 
+import {
+  TypeScriptIcon,
+  AstroIcon,
+  ReactIcon,
+  TailwindIcon,
+  GoIcon,
+  PostgresIcon,
+  AngularIcon,
+  JavaIcon
+} from './devIcons';
+
 interface project {
   title: string;
   github: string;
@@ -8,30 +19,31 @@ interface project {
   desc: string;
   tech: string[];
 }
+
 const PROJECTS: project[] = [{
   title: 'Project 1',
-  github: 'github.com/bradswhite/project1',
-  url: 'vercel.com',
+  github: 'https://github.com/bradswhite/project1',
+  url: 'https://vercel.com',
   desc: 'Project details..',
-  tech: ['TypeScript', 'Astro', 'Tailwind', 'Golang']
+  tech: [ TypeScriptIcon, AstroIcon, TailwindIcon, GoIcon ]
 }, {
   title: 'Project 2',
-  github: 'github.com/bradswhite/project2',
-  url: 'vercel.com',
+  github: 'https://github.com/bradswhite/project2',
+  url: 'https://vercel.com',
   desc: 'Project details..',
-  tech: ['TypeScript', 'Astro', 'Tailwind', 'Golang']
+  tech: [ TypeScriptIcon, AstroIcon, TailwindIcon, GoIcon ]
 }, {
   title: 'Project 3',
-  github: 'github.com/bradswhite/project3',
-  url: 'vercel.com',
+  github: 'https://github.com/bradswhite/project3',
+  url: 'https://vercel.com',
   desc: 'Project details..',
-  tech: ['TypeScript', 'Astro', 'Tailwind', 'Golang']
+  tech: [ TypeScriptIcon, AstroIcon, TailwindIcon, GoIcon ]
 }, {
   title: 'Project 4',
-  github: 'github.com/bradswhite/project4',
-  url: 'vercel.com',
+  github: 'https://github.com/bradswhite/project4',
+  url: 'https://vercel.com',
   desc: 'Project details..',
-  tech: ['TypeScript', 'Astro', 'Tailwind', 'Golang']
+  tech: [ TypeScriptIcon, AstroIcon, TailwindIcon, GoIcon ]
 }];
 ---
 

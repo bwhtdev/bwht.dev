@@ -57,7 +57,7 @@ const { title, desc } = Astro.props;
     x-data="{darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system')}"
     x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))"
     x-bind:class="{'dark': darkMode === 'dark' || (darkMode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}">
-    <main class='mx-auto min-h-full max-w-4xl py-16'>
+    <main class='mx-auto min-h-full max-w-4xl py-16 sm:px-16'>
       <slot />
       <Footer />
     </main>

@@ -1,4 +1,4 @@
-<div x-on:click="darkMode = darkMode === 'dark' ? 'light' : 'dark'">
+<div class='flex gap-1 cursor-pointer h-12 items-center justify-center space-y-2 font-semibold rounded-lg border-[1px] border-none bg-white/5 p-4 text-sm rounded-md shadow-md active:translate-y-[2px] transition-all duration-300 ease-out hover:shadow-[rgba(0,122,204,0.4)]' x-on:click="darkMode = darkMode === 'dark' ? 'light' : 'dark'">
   <svg
     x-bind:class="{'hidden': darkMode === 'dark'}"
     width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none" stroke="#D08A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

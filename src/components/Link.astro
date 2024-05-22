@@ -6,8 +6,8 @@ interface Props {
 const { url, name } = Astro.props as Props;
 ---
 
-<a href={url} target='_blank' class=' cursor-pointer font-baunk text-gray-800 dark:text-gray-200'>
-  <svg width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none" stroke="#D08A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<a href={url} target='_blank' class='flex gap-1 cursor-pointer font-baunk text-gray-800 dark:text-gray-200 h-12 items-center justify-center space-y-2 font-semibold rounded-lg border-[1px] border-none bg-white/5 px-4 py-2 text-sm rounded-md shadow-md active:translate-y-[2px] transition-all duration-300 ease-out hover:shadow-[rgba(0,122,204,0.4)]'> 
+  <svg class='stroke-gray-800 dark:stroke-[#D08A8A]' width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <title>{name}</title>
     <slot />
   </svg>

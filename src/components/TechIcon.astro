@@ -7,7 +7,7 @@ const { name, shadowColor } = Astro.props as Props;
 ---
 
 <div class={`cursor-pointer h-24 flex flex-col items-center justify-center space-y-2 font-semibold rounded-lg border-[1px] border-none bg-[rgba(208,138,138,0.5)] dark:bg-[rgba(163,82,82,0.5)] p-4 text-sm rounded-md shadow-md active:translate-y-[2px] transition-all duration-300 ease-out ${shadowColor}`}>
-  <svg width='5em' height='5em' viewBox='0 0 128 128'>
+  <svg class='fill-[#A35252] dark:fill-[#D08A8A]' width='5em' height='5em' viewBox='0 0 128 128'>
     <title>{name}</title>
     <slot />
   </svg>

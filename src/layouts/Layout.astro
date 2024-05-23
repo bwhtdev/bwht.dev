@@ -5,15 +5,16 @@ import Footer from '../components/Footer.astro';
 interface Props {
 	title: string;
   desc: string;
+  image?: string;
 }
 
-const { title, desc } = Astro.props;
+const { title, desc, image } = Astro.props;
 ---
 
 <!DOCTYPE HTML>
 <html lang="en-US">
 	<head>
-    <BaseHead title={title} desc={desc} />
+    <BaseHead title={title} desc={desc} image={image} />
     <style is:global>
       :root {
         --pri-dark: 144, 60, 60;

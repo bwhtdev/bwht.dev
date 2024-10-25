@@ -1,5 +1,5 @@
 # bsw-v2
-Portfolio site @ bradswhite.com
+Portfolio site @ bwht.dev
 
 ```
 pnpm dev

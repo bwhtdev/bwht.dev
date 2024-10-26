@@ -6,6 +6,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.bradswhite.com',
+  site: 'https://www.bwht.dev',
   integrations: [alpinejs(), tailwind(), mdx(), sitemap()]
 });

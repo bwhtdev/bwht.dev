@@ -1,14 +1,14 @@
-<div class='flex gap-1 cursor-pointer h-12 items-center justify-center space-y-2 font-semibold rounded-lg border-[1px] border-none bg-[rgba(208,138,138,0.5)] dark:bg-[rgba(163,82,82,0.5)] p-4 text-sm rounded-md shadow-md active:translate-y-[2px] transition-all duration-300 ease-out hover:shadow-[rgba(163,82,82,0.4)] dark:hover:shadow-[rgba(250,160,160,0.4)]' x-on:click="darkMode = darkMode === 'dark' ? 'light' : 'dark'">
+<div class='flex gap-1 cursor-pointer h-12 items-center justify-center space-y-2 font-semibold rounded-lg border-[1px] border-none bg-[rgba(208,138,138,0.5)] dark:bg-[rgba(163,82,82,0.5)] p-4 text-sm rounded-md shadow-md active:translate-y-[2px] transition-all duration-300 ease-out hover:shadow-[rgba(163,82,82,0.4)] dark:hover:shadow-[rgba(250,160,160,0.4)]' x-on:click="darkMode = darkMode === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark') : (darkMode === 'dark' ? 'light' : 'dark')">
   <svg
     class='stroke-gray-800'
-    x-bind:class="{'hidden': darkMode === 'dark'}"
+    x-bind:class="{'hidden': darkMode === 'dark' || (darkMode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}"
     width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <title>Dark Mode</title>
     <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
   </svg>
   <svg
     class='stroke-[#D08A8A]'
-    x-bind:class="{'hidden': darkMode === 'light'}"
+    x-bind:class="{'hidden': darkMode === 'light' || (darkMode === 'system' && window.matchMedia('(prefers-color-scheme: light)').matches)}"
     width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <title>Light Mode</title>
     <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>

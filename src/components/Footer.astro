@@ -10,7 +10,43 @@ import BlogBtn from './BlogBtn.astro';
   <div class='flex gap-2 flex-wrap flex-row-reverse'>
     <Links small={true} />
 
-    <BlogBtn small={true} />
-    <AboutBtn small={true} />
+    <a
+      href='/blog'
+      class='flex gap-1 cursor-pointer font-baunk text-gray-800 dark:text-gray-200 h-12 items-center justify-center space-y-2 font-semibold rounded-lg border-[1px] border-none bg-[rgba(208,138,138,0.5)] dark:bg-[rgba(163,82,82,0.5)] px-4 py-2 text-sm rounded-md shadow-md active:translate-y-[2px] transition-all duration-300 ease-out hover:shadow-[rgba(163,82,82,0.4)] dark:hover:shadow-[rgba(250,160,160,0.4)]'>
+      <svg
+        class='stroke-gray-800 dark:stroke-[#D08A8A]'
+        width="1.5em" height="1.5em" viewBox="0 0 14 14"
+        fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+      >
+        <title>Blog</title>
+        <g><path d="m7.5 9l-3 .54L5 6.5L10.73.79a1 1 0 0 1 1.42 0l1.06 1.06a1 1 0 0 1 0 1.42Z"/><path d="M12 9.5v3a1 1 0 0 1-1 1H1.5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h3"/></g>
+      </svg>
+    </a>
+
+    <a
+      href='/about'
+      class='flex gap-1 cursor-pointer font-baunk text-gray-800 dark:text-gray-200 h-12 items-center justify-center space-y-2 font-semibold rounded-lg border-[1px] border-none bg-[rgba(208,138,138,0.5)] dark:bg-[rgba(163,82,82,0.5)] px-4 py-2 text-sm rounded-md shadow-md active:translate-y-[2px] transition-all duration-300 ease-out hover:shadow-[rgba(163,82,82,0.4)] dark:hover:shadow-[rgba(250,160,160,0.4)]'>
+      <svg
+        class='stroke-gray-800 dark:stroke-[#D08A8A]'
+        width="1.5em" height="1.5em" viewBox="0 0 14 14"
+        fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+      >
+        <title>About</title>
+        <g><path d="M5.5 4.054a1.5 1.5 0 1 1 1.5 1.5v.5m0 2.062a.25.25 0 0 1 0-.5m0 .5a.25.25 0 0 0 0-.5"/><path d="M12.5 13.5H3a1.5 1.5 0 1 1 0-3h8.5a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1H3a1.5 1.5 0 0 0-1.5 1.46v10m10-1.46v3"/></g>
+      </svg>
+    </a>
+
+    <a
+      href='/'
+      class='flex gap-1 cursor-pointer font-baunk text-gray-800 dark:text-gray-200 h-12 items-center justify-center space-y-2 font-semibold rounded-lg border-[1px] border-none bg-[rgba(208,138,138,0.5)] dark:bg-[rgba(163,82,82,0.5)] px-4 py-2 text-sm rounded-md shadow-md active:translate-y-[2px] transition-all duration-300 ease-out hover:shadow-[rgba(163,82,82,0.4)] dark:hover:shadow-[rgba(250,160,160,0.4)]'>
+      <svg
+        class='stroke-gray-800 dark:stroke-[#D08A8A]'
+        width="1.5em" height="1.5em" viewBox="0 0 14 14"
+        fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+      >
+        <title>Home</title>
+        <path d="M13.5 6.94a.999.999 0 0 0-.32-.74L7 .5L.82 6.2a1 1 0 0 0-.32.74v5.56a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1zM7 13.5v-4"/>
+      </svg>
+    </a>
   </div>
 </section>

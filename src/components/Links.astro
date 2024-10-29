@@ -20,12 +20,8 @@ const LINKS = [{
   icon: `<path d="M15 12h-5"/><path d="M15 8h-5"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/>`
 }, {
   url: 'https://www.x.com/bwhtdev',
-  name: '𝕏 DOT COM',
+  name: '.COM',
   icon: `<path d="M14.243 10.168 22.99 0h-2.073L13.322 8.829 7.255 0H0.258l9.174 13.351L0.258 24.015h2.0731L10.352 14.690 16.759 24.015h6.997L14.242 10.168ZM11.403 13.469l-0.929-1.329-7.395-10.578h3.184L12.230 10.098l0.929 1.329 7.758 11.097h-3.183L11.403 13.469" class="fill-gray-800 dark:fill-[#D08A8A]" style="stroke-width:.104373"></path>`
-}, {
-  url: 'mailto:brad@bwht.dev',
-  name: 'Mail',
-  icon: `<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>`
 }];
 ---
 <div class='flex gap-2 flex-row flex-wrap'>
@@ -34,4 +30,18 @@ const LINKS = [{
       <Fragment set:html={icon} />
     </Link>
   ))}
+  
+  <button
+    @click="modalOpen=true"
+    class='flex gap-1 cursor-pointer font-baunk text-gray-800 dark:text-gray-200 h-12 items-center justify-center space-y-2 font-semibold rounded-lg border-[1px] border-none bg-[rgba(208,138,138,0.5)] dark:bg-[rgba(163,82,82,0.5)] px-4 py-2 text-sm rounded-md shadow-md active:translate-y-[2px] transition-all duration-300 ease-out hover:shadow-[rgba(163,82,82,0.4)] dark:hover:shadow-[rgba(250,160,160,0.4)]'>
+    <svg
+      class='stroke-gray-800 dark:stroke-[#D08A8A]'
+      width="1.5em" height="1.5em" viewBox="0 0 14 14"
+      fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+    >
+      <title>Contact</title>
+      <path d="M12.5 1.75h-11a1 1 0 0 0-1 1v8.5a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-8.5a1 1 0 0 0-1-1"/><path d="m.5 3l5.86 3.524c.18.106.406.163.64.163c.234 0 .46-.057.64-.163L13.5 3"/></g>
+    </svg>
+    {!small && (<bold>Contact</bold>)}
+  </button>
 </div>

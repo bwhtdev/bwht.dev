@@ -1,5 +1,7 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
+import ContactModal from '../components/ContactModal.astro';
+import Toast from '../components/Toast.astro';
 import Footer from '../components/Footer.astro';
 
 interface Props {
@@ -147,9 +149,18 @@ const { title, desc, image } = Astro.props;
     x-data="{darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system')}"
     x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))"
     x-bind:class="{'dark': darkMode === 'dark' || (darkMode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}">
-    <main class='mx-auto min-h-full max-w-4xl py-16 sm:px-16'>
-      <slot />
-      <Footer />
-    </main>
+    <div x-data="{ title: 'Default Toast Notification', description: '', type: 'success', position: 'bottom-right', expanded: false, popToast (custom) { let html = ''; if (typeof custom != 'undefined') { html = custom; } toast(this.title, { description: this.description, type: this.type, position: this.position, html: html }) }}"
+      x-init=" window.toast = function(message, options = {}) { let description = ''; let type = 'success'; let position = 'bottom-right'; let html = ''; if (typeof options.description != 'undefined') description = options.description; if (typeof options.type != 'undefined') type = options.type; if (typeof options.position != 'undefined') position = options.position; if (typeof options.html != 'undefined') html = options.html; window.dispatchEvent(new CustomEvent('toast-show', { detail : { type: type, message: message, description: description, position : position, html: html }})); }"
+      class="relative space-y-5">
+      <main
+        class='mx-auto min-h-full max-w-4xl py-16 sm:px-16'
+        x-data="{ modalOpen: false }"
+        @keydown.escape.window="modalOpen = false">
+        <slot />
+        <ContactModal />
+        <Toast />
+        <Footer />
+      </main>
+    </div>
 	</body>
 </html>

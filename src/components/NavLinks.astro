@@ -1,0 +1,47 @@
+---
+import DarkModeLink from './DarkModeLink.astro';
+import LogoLink from './LogoLink.astro';
+import NavLink from './NavLink.astro';
+import ContactLink from './ContactLink.astro';
+---
+
+<LogoLink />
+
+<NavLink url='/' text='Home'>
+  <svg width="2em" height="2em" viewBox="0 0 14 14">
+    <title>Home</title>
+    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M13.5 6.94a.999.999 0 0 0-.32-.74L7 .5L.82 6.2a1 1 0 0 0-.32.74v5.56a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1zM7 13.5v-4"/>
+  </svg>
+</NavLink>
+
+<NavLink url='/about' text='About'>
+  <svg width="2em" height="2em" viewBox="0 0 14 14">
+    <title>About</title>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 4.054a1.5 1.5 0 1 1 1.5 1.5v.5m0 2.062a.25.25 0 0 1 0-.5m0 .5a.25.25 0 0 0 0-.5"/><path d="M12.5 13.5H3a1.5 1.5 0 1 1 0-3h8.5a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1H3a1.5 1.5 0 0 0-1.5 1.46v10m10-1.46v3"/></g>
+  </svg>
+</NavLink>
+
+<NavLink url='/blog' text='Blog'>
+  <svg width="2em" height="2em" viewBox="0 0 14 14">
+    <title>Blog</title>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 9l-3 .54L5 6.5L10.73.79a1 1 0 0 1 1.42 0l1.06 1.06a1 1 0 0 1 0 1.42Z"/><path d="M12 9.5v3a1 1 0 0 1-1 1H1.5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h3"/></g>
+  </svg>
+</NavLink>
+
+<NavLink url='/#projects' text='Projects'>
+  <svg width="2em" height="2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+    <title>Projects</title>
+    <rect width="7" height="7" x="14" y="3" rx="1"/><path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3"/>
+  </svg>
+</NavLink>
+
+<NavLink url='/resources' text='Resources'>
+  <svg width="2em" height="2em" viewBox="0 0 14 14">
+    <title>Resources</title>
+    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m11 13.5l-4-4l-4 4v-12a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+  </svg>
+</NavLink>
+
+<ContactLink />
+
+<DarkModeLink />

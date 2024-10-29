@@ -1,0 +1,22 @@
+<button
+  class='relative inline-block w-full h-full px-4 py-5 mx-2 font-medium leading-tight text-center md:py-2 group md:w-auto md:px-2 lg:mx-3 md:text-center duration-300 ease-out text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 ml-8'
+  x-on:click="darkMode = darkMode === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark') : (darkMode === 'dark' ? 'light' : 'dark')"
+>
+  <div class='flex items-center space-x-2'>
+    <svg
+      x-bind:class="{'hidden': darkMode === 'dark' || (darkMode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}"
+      width="1.5em" height="1.5em" viewBox="0 0 14 14"
+    >
+      <title>Dark Mode</title>
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M12 10.48A6.55 6.55 0 0 1 6.46.5a6.55 6.55 0 0 0 1 13A6.46 6.46 0 0 0 13 10.39a6.79 6.79 0 0 1-1 .09Z"/>
+    </svg>
+    <svg
+      x-bind:class="{'hidden': darkMode === 'light' || (darkMode === 'system' && window.matchMedia('(prefers-color-scheme: light)').matches)}"
+      width="1.5em" height="1.5em" viewBox="0 0 14 14"
+    >
+      <title>Light Mode</title>
+      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="2.5"/><path d="M7 .5v2m-4.6-.1l1.42 1.42M.5 7h2m-.1 4.6l1.42-1.42M7 13.5v-2m4.6.1l-1.42-1.42M13.5 7h-2m.1-4.6l-1.42 1.42"/></g>
+    </svg>
+  </div>
+  <span class="absolute bottom-0 w-0 h-px duration-300 ease-out translate-y-7 group-hover:left-0 left-1/2 group-hover:w-full bg-gradient-to-r md:from-gray-700 md:via-gray-400 md:to-gray-700 from-gray-900 via-gray-600 to-gray-900"></span>
+</button>
